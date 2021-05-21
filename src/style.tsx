@@ -13,6 +13,7 @@ interface ModalBgColor {
 export const Content = styled.div<ModalStatus>`
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   left: 0;
   max-height: 100vh;

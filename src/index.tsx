@@ -12,13 +12,12 @@ type RefContent = {
 
 interface Props {
   backgroundColor: string
-  children: React.ReactNode
+  children: (
+    onClick: (event: React.MouseEvent) => void
+  ) => React.ReactNode
   toogleComponent: (
     onClick: (event: React.MouseEvent) => void,
     status: boolean
-  ) => React.ReactNode
-  closeComponent: (
-    onClick: (event: React.MouseEvent) => void
   ) => React.ReactNode
   offsetX?: number
   offsetY?: number
@@ -32,7 +31,6 @@ export const ReactCircleModal = React.forwardRef<RefContent | null, Props>(
       offsetX = 0,
       offsetY = 0,
       toogleComponent,
-      closeComponent
     },
     ref
   ) => {
@@ -73,8 +71,7 @@ export const ReactCircleModal = React.forwardRef<RefContent | null, Props>(
             </IconPositionWrapper>
           </IconWrapper>
           <Content status={modalStatus}>
-            <div>{children}</div>
-            {closeComponent(() => {
+            {children(() => {
               setTimeout(() => setWrapperStatus(false), 500)
               closeModal()
             })}

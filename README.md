@@ -20,21 +20,26 @@ import ReactCircleModal from 'react-circle-modal'
 const Example = () => {
   return (
     <ReactCircleModal
-      backgroundColor="#ff0000"
+      backgroundColor="#97349a"
       toogleComponent={onClick => (
         <button onClick={onClick}>
-          Component that when clicked the modal opens
+          Click here to open modal
         </button>
       )}
-      closeComponent={onClick => (
-        <button onClick={onClick}>
-          Component that when clicked closes the modal
-        </button>
-      )}
+      // Optional fields and their default values
+      offsetX={0}
+      offsetY={0}
     >
-      <p>
-        Content inside of modal
-      </p>
+      {(onClick) => (
+        <div style={{ backgroundColor: '#fff', padding: '1em' }}>
+          <p>
+            Content inside of modal
+          </p>
+          <button onClick={onClick}>
+            Click here to close modal
+          </button>
+        </div>
+      )}
     </ReactCircleModal>
   )
 }
