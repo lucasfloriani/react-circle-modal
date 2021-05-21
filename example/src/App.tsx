@@ -1,10 +1,26 @@
 import React from 'react'
-
-import { ExampleComponent } from 'react-circle-modal'
-import 'react-circle-modal/dist/index.css'
+import ReactCircleModal from 'react-circle-modal'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return (
+    <ReactCircleModal
+      backgroundColor="#ff0000"
+      toogleComponent={onClick => (
+        <button onClick={onClick}>
+          Component that when clicked the modal opens
+        </button>
+      )}
+      closeComponent={onClick => (
+        <button onClick={onClick}>
+          Component that when clicked closes the modal
+        </button>
+      )}
+    >
+      <p>
+        Content inside of modal
+      </p>
+    </ReactCircleModal>
+  )
 }
 
 export default App

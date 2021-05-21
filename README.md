@@ -7,22 +7,39 @@
 ## Install
 
 ```bash
-npm install --save react-circle-modal
+npm i react-circle-modal
+yarn add react-circle-modal
 ```
 
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
+import ReactCircleModal from 'react-circle-modal'
 
-import MyComponent from 'react-circle-modal'
-import 'react-circle-modal/dist/index.css'
-
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const Example = () => {
+  return (
+    <ReactCircleModal
+      backgroundColor="#ff0000"
+      toogleComponent={onClick => (
+        <button onClick={onClick}>
+          Component that when clicked the modal opens
+        </button>
+      )}
+      closeComponent={onClick => (
+        <button onClick={onClick}>
+          Component that when clicked closes the modal
+        </button>
+      )}
+    >
+      <p>
+        Content inside of modal
+      </p>
+    </ReactCircleModal>
+  )
 }
+
+export default Example
 ```
 
 ## License

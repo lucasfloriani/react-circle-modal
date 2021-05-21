@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import ReactCircleModal from '.'
 
-describe('ExampleComponent', () => {
+describe('ReactCircleModal', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(ReactCircleModal).toBeTruthy()
   })
 })
